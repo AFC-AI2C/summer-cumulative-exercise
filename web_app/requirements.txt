@@ -1,0 +1,7 @@
+fastapi
+pytest
+pylint
+black
+uvicorn
+mypy
+pre-commit
