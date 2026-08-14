@@ -5,3 +5,5 @@ black
 uvicorn
 mypy
 pre-commit
+requests
+pytest-cov
