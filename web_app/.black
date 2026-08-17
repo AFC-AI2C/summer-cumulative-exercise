@@ -1,0 +1,7 @@
+[black]
+include = '(\.pyi?|\.ipynb)$'
+exclude = '/(\.direnv|\.eggs|\.git|\.hg|\.mypy_cache|\.nox|\.tox|\.venv|venv|\.svn|\.ipynb_checkpoints|_build|buck-out|build|dist|.*__pycache__.*|__pypackages__)/'
+line-length = 120
+pyi = true
+skip-string-normalization = false
+skip-magic-trailing-comma = false

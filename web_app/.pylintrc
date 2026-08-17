@@ -1,0 +1,27 @@
+[MAIN]
+# Paths to ignore during linting
+ignore-patterns=build,dist,.venv,venv,node_modules,__pycache__
+ignored-modules=migrations,settings
+
+[MESSAGES CONTROL]
+# Disable specific message IDs
+disable=
+    # Missing docstrings
+    missing-docstring,
+    # Line length (if you handle this separately with black/flake8)
+    line-too-long,
+    import-error
+
+[FORMAT]
+# Maximum line length (optional override)
+max-line-length=120
+
+[DESIGN]
+# Allow more attributes/classes/functions if needed
+max-attributes=15
+max-public-methods=20
+max-returns=10
+
+[SIMILARITIES]
+# Minimum lines for similarity detection (increase to reduce noise)
+min-similarity-lines=10
