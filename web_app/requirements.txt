@@ -7,3 +7,4 @@ mypy
 pre-commit
 requests
 pytest-cov
+pydantic
