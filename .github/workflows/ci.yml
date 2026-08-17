@@ -27,3 +27,10 @@ jobs:
               run: mypy --config-file=./web_app/mypy.ini ./web_app/
             - name: Unit Test
               run: pytest -c ./web_app/pytest.ini ./web_app/
+            - name: Docker build
+              uses: macbre/push-to-ghcr@master
+              with:
+                image_name: ${{ github.repository }}
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                context: web_app/
+                dockerfile: web_app/Dockerfile
