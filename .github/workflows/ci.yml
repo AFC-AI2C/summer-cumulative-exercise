@@ -1,0 +1,29 @@
+name: Continuous Integration
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+    do-the-things:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v7
+            - name: Install python
+              uses: actions/setup-python@v7
+              with:
+                python-version: '3.14'
+            - name: Install dependencies
+              run: pip install -r ./web_app/requirements.txt
+            - name: Format
+              run: black ./web_app/
+            - name: Lint
+              run: pylint --rcfile=./web_app/.pylintrc ./web_app/
+            - name: Typecheck
+              run: mypy --config-file=./web_app/mypy.ini ./web_app/
+            - name: Unit Test
+              run: pytest -c ./web_app/pytest.ini ./web_app/
